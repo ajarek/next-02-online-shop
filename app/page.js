@@ -1,7 +1,28 @@
-export default function Home() {
+
+const URL1 = 'https://fakestoreapi.com/products'
+const URL2 = 'https://dummyjson.com/products/'
+
+
+
+async function getTickets() {
+  const res = await fetch( URL2, {
+    next: {
+      revalidate: 0 // use 0 to opt out of using cache
+    }
+  })
+  return res.json()
+}
+
+export default async function Home() {
+ 
+  const articles= await getTickets()
+ 
   return (
-    <main className='flex min-h-screen flex-col items-center justify-between p-24'>
-      <h1>lol</h1>
-    </main>
+    <>
+    {articles.products.map((product)=>(
+        <div className="card" key={product.id}>{product.title}</div>
+      )
+    )}
+    </>
   )
 }
