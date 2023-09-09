@@ -1,0 +1,42 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* base styles */
+body {
+  background: #ebf0fa;
+  @apply text-gray-500;
+}
+
+h1,
+h2 {
+  @apply font-bold text-gray-300 text-lg;
+}
+
+main {
+  @apply max-w-7xl mx-auto px-8;
+}
+
+main>h2 {
+  @apply mb-4 pb-2 text-base;
+}
+
+nav {
+  @apply border-b-2 border-gray-200 flex items-center gap-5 mx-auto max-w-7xl p-4 bg-gray-950 text-white transition duration-300;
+}
+
+.wrapper-link {
+  @apply flex justify-between w-10/12;
+}
+
+nav a, nav span {
+  @apply text-gray-300;
+}
+
+nav a:hover {
+  @apply text-white text-xl;
+}
+
+main nav {
+  @apply border-0;
+}
