@@ -18,11 +18,15 @@ export default async function Home() {
   const articles= await getTickets()
  
   return (
-    <>
+    <div className="grid gap-6 grid-cols-3 grid-rows-10 px-10 pt-24 pb-10">
     {articles.products.map((product)=>(
-        <div className="card" key={product.id}>{product.title}</div>
+        <div className="card" key={product.id}>
+         <div className="h-48 mx-auto"><img className="h-full w-full object-contain  "  src={product.images[0]} alt="" /></div> 
+         <div>{product.title}</div> 
+         <div>{product.price} PLN</div> 
+          </div>
       )
     )}
-    </>
+    </div>
   )
 }
