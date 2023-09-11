@@ -1,28 +1,11 @@
-import { notFound, useRouter } from 'next/navigation'
 import Counter from '@/app/utility/counter'
-
-const URL1 = 'https://fakestoreapi.com/products'
-const URL2 = 'https://dummyjson.com/products/'
-
-async function getProducts() {
-  const res = await fetch(URL2, {
-    next: {
-      revalidate: 60,
-    },
-  })
-
-  if (!res.ok) {
-    notFound()
-  }
-
-  return res.json()
-}
+import getProducts from '@/app/utility/getProducts'
 
 export default async function ProductsDetails({ params }) {
   const id = params.id
-  const { products } = await getProducts()
+  const { products } = await getProducts(60)
   const product = products.find((el) => el.id === +id)
-  console.log(product)
+  
   return (
     <div className='p-24 text-white'>
 

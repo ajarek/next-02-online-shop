@@ -19,8 +19,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={rubik.className}>
-      <AppContext.Provider
-        value={{count, setCount}}>
+      <AppContext.Provider value={{count, setCount}}>
         <Navbar />
         {children}
         </AppContext.Provider>
