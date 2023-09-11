@@ -1,6 +1,9 @@
+"use client"
+
 import './globals.css'
 import { Rubik } from 'next/font/google'
-
+import { createContext, useState } from 'react'
+export const AppContext = createContext()
 // components
 import Navbar from './components/Navbar'
 
@@ -12,12 +15,17 @@ export const metadata = {
 }
 
 export default function RootLayout({ children }) {
+  const [count, setCount]=useState(1)
   return (
     <html lang="en">
       <body className={rubik.className}>
+      <AppContext.Provider
+        value={{count, setCount}}>
         <Navbar />
         {children}
+        </AppContext.Provider>
       </body>
+     
     </html>
   )
 }
