@@ -5,7 +5,7 @@ import getProducts from './utility/getProducts'
 
 export default async function Home() {
   const router = useRouter()
-  const {products} = await getProducts()
+  const {products} = await getProducts(3600)
 
   const editProducts = (id) => {
     router.push(`/idProduct/${id}`)

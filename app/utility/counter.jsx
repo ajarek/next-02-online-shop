@@ -12,7 +12,7 @@ export default function Counter() {
   return (
     <div className='flex '>
       <button className='counter' onClick={()=>count<=1?setCount(1):setCount(count-1)}><FaMinus/></button>
-      <div  className='counter'>{count}</div>
+      <div id='counter' className='counter'>{count}</div>
       <button className='counter' onClick={()=>count>=20?setCount(20):setCount(count+1)}><FaPlus/></button>
     </div>
   )
