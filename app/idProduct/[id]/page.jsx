@@ -1,11 +1,14 @@
 'use client'
-
+import { useRouter } from 'next/navigation'
 import Counter from '@/app/utility/counter'
 import getProducts from '@/app/utility/getProducts'
-import { useState,useEffect } from 'react'
+import { useState, useEffect, useContext } from 'react'
+import { AppContext } from '../../layout'
+import {saveStorage} from '@/app/utility/localStorage'
 
 export default async function ProductsDetails({ params }) {
-  
+  const { dataLength,setDataLength } =  useContext(AppContext)
+  const router = useRouter();
   const id = params.id
   const { products } = await getProducts(60)
   const product = products.find((el) => el.id === +id)
@@ -16,7 +19,9 @@ export default async function ProductsDetails({ params }) {
   const addToCart =()=>{
     const value =document.getElementById('counter').innerText
     const items={ ...product, count: value }
-    console.log(items);
+    saveStorage(items,'cart')
+    setDataLength(dataLength + 1)
+    router.push('/')
   }
 
   return (

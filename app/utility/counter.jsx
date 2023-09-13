@@ -6,7 +6,7 @@ import { FaPlus, FaMinus } from 'react-icons/fa'
 
 
 export default function Counter() {
-  const { count, setCount } =  useContext(AppContext)
+  const [count, setCount]=useState(1)
  
   
   return (

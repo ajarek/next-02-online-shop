@@ -15,11 +15,12 @@ export const metadata = {
 }
 
 export default function RootLayout({ children }) {
-  const [count, setCount]=useState(1)
+ 
+  const [dataLength,setDataLength]=useState(0)
   return (
     <html lang="en">
       <body className={rubik.className}>
-      <AppContext.Provider value={{count, setCount}}>
+      <AppContext.Provider value={{ dataLength,setDataLength}}>
         <Navbar />
         {children}
         </AppContext.Provider>
