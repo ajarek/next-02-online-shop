@@ -32,18 +32,18 @@ export default function page() {
                 key={el.id}
                 className='bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600'
               >
-                <td  className='h-12 mx-auto'>
+                <td  className=' h-14'>
                   <img
-                    className='h-full w-full object-contain  '
+                    className='h-full  object-contain  '
                     src={el.images[0]}
                     alt='images'
                   />
                 </td>
                 <td className='mr-2'>{el.title}</td>
                 <td className='mr-2'>{el.count}</td>
-                <td className='mr-2'>{el.price}</td>
-                <td className='mr-2'>{el.count * el.price}</td>
-                <td className='mr-2'>❌</td>
+                <td className='mr-2'>{(el.price).toFixed(2)}</td>
+                <td className='mr-2'>{(el.count * el.price).toFixed(2)}</td>
+                <td className='mr-2 cursor-pointer'>❌</td>
               </tr>
             )
           })}
