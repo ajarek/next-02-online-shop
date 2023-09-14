@@ -2,31 +2,28 @@
 import { useRouter } from 'next/navigation'
 import Counter from '@/app/utility/counter'
 import getProducts from '@/app/utility/getProducts'
-import { useState, useEffect, useContext } from 'react'
+import { useContext } from 'react'
 import { AppContext } from '../../layout'
-import {saveStorage} from '@/app/utility/localStorage'
+import { saveStorage } from '@/app/utility/localStorage'
+import ButtonAddCart from '@/app/components/ButtonAddCart'
 
 export default async function ProductsDetails({ params }) {
-  const { dataLength,setDataLength } =  useContext(AppContext)
-  const router = useRouter();
+  const { dataLength, setDataLength } = useContext(AppContext)
+  const router = useRouter()
   const id = params.id
   const { products } = await getProducts(60)
   const product = products.find((el) => el.id === +id)
- 
-        
-        
-      
-  const addToCart =()=>{
-    const value =document.getElementById('counter').innerText
-    const items={ ...product, count: value }
-    saveStorage(items,'cart')
+
+  const addToCart = () => {
+    const value = document.getElementById('counter').innerText
+    const items = { ...product, count: value }
+    saveStorage(items, 'cart')
     setDataLength(dataLength + 1)
     router.push('/')
   }
 
   return (
     <div className='p-24 text-white'>
-
       <h2 className='text-black'>Product Details</h2>
 
       <div className='bg-black p-5'>
@@ -41,9 +38,7 @@ export default async function ProductsDetails({ params }) {
         <p>{product.price.toFixed(2)} $</p>
         <p>{product.description}</p>
         <Counter />
-        <button onClick={()=>addToCart()}  className='transition duration-300 hover:bg-white hover:text-black flex justify-center items-center border-solid border-2 border-gray-500 py-1 px-3 mt-2 rounded-md'>
-          Add to Cart
-        </button>
+        <ButtonAddCart onClick={() => addToCart()} />
       </div>
     </div>
   )

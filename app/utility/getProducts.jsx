@@ -1,6 +1,6 @@
 const URL1 = 'https://fakestoreapi.com/products'
 const URL2 = 'https://dummyjson.com/products/'
-import { notFound, useRouter } from 'next/navigation'
+import { notFound } from 'next/navigation'
 export default async function getProducts(time=0) {
   const res = await fetch( URL2, {
     next: {
