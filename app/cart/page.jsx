@@ -41,12 +41,12 @@ export default function page() {
       <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400">
         <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
           <tr>
-            <th className=''>Miniatura</th>
-            <th>Nazwa</th>
-            <th>Ilość</th>
-            <th>Cena PLN</th>
-            <th>Wartość PLN</th>
-            <th>Usuń</th>
+            <th className=''>Miniature</th>
+            <th>Name</th>
+            <th className='text-center'>Quantity</th>
+            <th className='text-right'>Price $</th>
+            <th className='text-right'>Value $</th>
+            <th className='text-center'>Delete</th>
           </tr>
         </thead>
         <tbody>
@@ -64,10 +64,10 @@ export default function page() {
                   />
                 </td>
                 <td className='mr-2'>{el.title}</td>
-                <td className='mr-2'>{el.count}</td>
-                <td className='mr-2'>{(el.price).toFixed(2)}</td>
-                <td className='mr-2'>{(el.count * el.price).toFixed(2)}</td>
-                <td className='mr-2 '>
+                <td className='mr-2 text-center'>{el.count}</td>
+                <td className='mr-2 text-right'>{(el.price).toFixed(2)}</td>
+                <td className='mr-2 text-right'>{(el.count * el.price).toFixed(2)}</td>
+                <td className='mr-2 text-center'>
                   <button onClick={()=>deleteItem(el.id)} className='cursor-pointer text-lg hover:text-xl transition'>🗑️</button>
                   </td>
               </tr>
