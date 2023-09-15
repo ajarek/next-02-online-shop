@@ -61,7 +61,7 @@ export default function page() {
   }
   
   return (
-    <div className='pt-24 px-12 '>
+    <div className='pt-24 px-12 max-md:px-2'>
       <ToastContainer
         position='top-center'
         autoClose={1000}
@@ -80,22 +80,22 @@ export default function page() {
           <table className='w-full text-sm text-left text-gray-500 dark:text-gray-400'>
             <thead className='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400'>
               <tr>
-                <th className=''>Miniature</th>
+                <th className='max-md:hidden'>Miniature</th>
                 <th>Name</th>
-                <th className='text-center'>Quantity</th>
+                <th className='text-center '>Quantity</th>
                 <th className='text-right'>Price $</th>
                 <th className='text-right'>Value $</th>
                 <th className='text-center'>Delete</th>
               </tr>
             </thead>
-            <tbody>
+            <tbody className=''>
               {data.map((el) => {
                 return (
                   <tr
                     key={el.id}
-                    className='bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600'
+                    className='bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600 '
                   >
-                    <td className=' h-14'>
+                    <td className=' h-14 max-md:hidden'>
                       <img
                         className='h-full  object-contain  '
                         src={el.images[0]}

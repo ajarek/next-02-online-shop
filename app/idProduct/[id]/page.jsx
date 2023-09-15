@@ -43,7 +43,7 @@ export default async function ProductsDetails({ params }) {
     })
   }
   return (
-    <div className='p-24 text-white'>
+    <div className='px-24 py-24 max-sm:px-2   text-white'>
           <ToastContainer
         position='top-center'
         autoClose={1000}

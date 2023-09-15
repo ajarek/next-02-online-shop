@@ -25,9 +25,7 @@ nav {
   @apply border-b-2 border-gray-200 flex items-center gap-5 mx-auto max-w-7xl p-4 bg-gray-950 text-white transition duration-300 fixed top-0 left-0 right-0 z-10;
 }
 
-.wrapper-link {
-  @apply flex justify-between w-10/12;
-}
+
 
 nav a, nav span {
   @apply text-gray-300;

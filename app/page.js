@@ -11,7 +11,7 @@ export default async function Home() {
     router.push(`/idProduct/${id}`)
   }
   return (
-    <div className='grid gap-6 grid-cols-3 grid-rows-10 px-10 pt-24 pb-10'>
+    <div className='grid gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 px-10 pt-24 pb-10'>
       {products.map((product) => (
         <div
           onClick={() => editProducts(product.id)}
