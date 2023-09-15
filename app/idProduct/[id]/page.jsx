@@ -4,19 +4,25 @@ import Counter from '@/app/utility/counter'
 import getProducts from '@/app/utility/getProducts'
 import { useContext } from 'react'
 import { AppContext } from '../../layout'
-import { saveStorage } from '@/app/utility/localStorage'
+import { saveStorage,fetchStorage } from '@/app/utility/localStorage'
 import ButtonAddCart from '@/app/components/ButtonAddCart'
 
 export default async function ProductsDetails({ params }) {
   const { dataLength, setDataLength } = useContext(AppContext)
   const router = useRouter()
   const id = params.id
-  const { products } = await getProducts(60)
+  const { products } = await getProducts()
   const product = products.find((el) => el.id === +id)
 
   const addToCart = () => {
     const value = document.getElementById('counter').innerText
     const items = { ...product, count: value }
+    const storeData = fetchStorage('cart')
+    const duble = storeData?.find((el) => el.id === items.id)
+    if (duble) {
+      alert('duble');
+      return
+    }
     saveStorage(items, 'cart')
     setDataLength(dataLength + 1)
     router.push('/')

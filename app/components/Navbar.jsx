@@ -19,7 +19,7 @@ export default  function Navbar() {
       <Image
         src={Logo}
         alt='my logo'
-        width={30}
+        width={40}
         placeholder='blur'
         quality={100}
       />
