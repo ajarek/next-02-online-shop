@@ -1,3 +1,5 @@
+#### Technologies used:next, tailwindcss, react-icons, react-toastify, localStorage.
+#### Hooks used: useState, useContext, useEfect.
 
 <img width="300" alt="Zrzut ekranu 2023-09-16 234604" src="https://github.com/ajarek/next-02-online-shop/assets/61388692/665e23dc-38d2-47dc-ace5-a332d4a430bb">
 <img width="300" alt="Zrzut ekranu 2023-09-16 234643" src="https://github.com/ajarek/next-02-online-shop/assets/61388692/ba7173fe-9364-4dca-ae91-4d6c5358c887">
