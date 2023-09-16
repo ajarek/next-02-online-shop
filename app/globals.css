@@ -57,5 +57,5 @@ main nav {
 }
 th,td{
 @apply
-border border-slate-300 px-6 py-3 
+border border-slate-300 px-6 py-3 bg-red-200  max-md:px-1;
 }

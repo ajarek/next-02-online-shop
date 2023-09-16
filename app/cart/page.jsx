@@ -121,7 +121,7 @@ export default function page() {
               })}
             </tbody>
           </table>
-          <div className='w-full flex  items-center justify-between mt-4 px-8'>
+          <div className='w-full flex  items-center justify-between mt-4 px-8 max-md:flex-col'>
             <div>
               <button
                 className=' text-black text-xl bg-red-300 hover:bg-red-500 py-2 px-4 mx-auto my-4 rounded-lg shadow-lg transition'
